@@ -1578,7 +1578,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             'like_count': int,
             'age_limit': 0,
             'duration': 223,
-            'thumbnail': 'https://i.ytimg.com/vi_webp/DbCvuSGfR3Y/maxresdefault.webp',
+            'thumbnail': 'https://i.ytimg.com/vi/DbCvuSGfR3Y/maxresdefault.jpg',
             'heatmap': 'count:100',
             'categories': ['Music'],
             'tags': ['half·alive', 'Conditions Of A Punk', 'Back Around'],
@@ -1643,7 +1643,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             'like_count': int,
             'age_limit': 0,
             'duration': 193,
-            'thumbnail': 'https://i.ytimg.com/vi_webp/_A9KsMbWh4E/maxresdefault.webp',
+            'thumbnail': 'https://i.ytimg.com/vi/_A9KsMbWh4E/maxresdefault.jpg',
             'categories': ['Music'],
             'tags': [],
             'creators': ['RK Music', 'HACHI', '焔魔るり CH. / Ruri Enma', '瀬戸乃とと', '水瀬 凪/MINASE Nagi'],
@@ -4102,7 +4102,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
         } for name in thumbnail_names for ext in ('webp', 'jpg'))
         for thumb in thumbnails:
             i = next((i for i, t in enumerate(thumbnail_names) if f'/{video_id}/{t}' in thumb['url']), n_thumbnail_names)
-            thumb['preference'] = (0 if '.webp' in thumb['url'] else -1) - (2 * i)
+            thumb['preference'] = (0 if '.jpg' in thumb['url'] else -1) - (2 * i)
         self._remove_duplicate_formats(thumbnails)
         self._downloader._sort_thumbnails(original_thumbnails)
 
